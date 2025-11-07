@@ -1,0 +1,142 @@
+/* ---- ESTIL GENERAL ---- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+  background: linear-gradient(135deg, #2193b0, #6dd5ed);
+  background-size: 400% 400%;
+  animation: gradientMove 20s ease infinite;
+  transition: background 3s ease-in-out;
+}
+
+/* ---- ANIMACIÓ DE MOVIMENT ---- */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ---- CONTENIDOR PRINCIPAL ---- */
+.container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---- FASE ---- */
+#fase {
+  font-size: 2.5rem;        /* una mica més gran que abans */
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- TEMPS ---- */
+#temps {
+  font-size: 9.5rem;        /* més gran que el text de la fase */
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  letter-spacing: 2px;
+}
+
+/* ---- BOTONS ---- */
+button {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;              /* 🔵 Totalment rodó */
+  width: 70px;                     /* 📏 Mida fixa per fer el cercle perfecte */
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ---- ICONES DELS BOTONS ---- */
+button img {
+  width: 50%;           /* 🔹 Més petit que el botó */
+  height: auto;
+  filter: brightness(0) invert(1); /* 🔸 Les fa 100% blanques */
+  transition: all 0.3s ease;
+}
+
+button:hover img {
+  transform: scale(1.1);
+}
+
+/* ---- COLORS SEGONS LA FASE ---- */
+body.escolta {
+  background: linear-gradient(135deg, #2193b0, #6dd5ed);
+  background-size: 400% 400%;
+}
+
+body.estira {
+  background: linear-gradient(135deg, #56ab2f, #a8e063);
+  background-size: 400% 400%;
+}
+
+body.descansa {
+  background: linear-gradient(135deg, #614385, #516395);
+  background-size: 400% 400%;
+}
+
+/* ---- BOTONS ---- */
+.controls {
+  position: absolute;
+  bottom: 10%; /* ajusta la distància respecte al marge inferior */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.controls.ocult {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---- BLOC DE TEXT + NÚMERO ---- */
+.display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centra exactament al mig */
+  text-align: center;
+}
+#crono {
+  font-size: 2rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
