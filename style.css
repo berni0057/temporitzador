@@ -140,3 +140,13 @@ body.descansa {
   margin-bottom: 2rem;
 }
 
+#disclaimer {
+  position: fixed;
+  bottom: 1px;
+  right: 15px;
+  color: #ff4d4d; /* vermell suau */
+  font-size: 0.8rem;
+  font-family: 'Poppins', sans-serif;
+  z-index: 100;
+  font-weight: bold;
+}
